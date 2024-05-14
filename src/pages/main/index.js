@@ -1,5 +1,6 @@
 import { styled } from "styled-components";
 import * as C from "../../components/index";
+import backgroundSVG from "../../assets/MainBackground.svg";
 
 export default function Main() {
   return (
@@ -12,6 +13,10 @@ export default function Main() {
 const MainContainer = styled.div`
   width: 100vw;
   height: 3070px;
-  top: 80px;
   background-color: black;
+  background-image: url(${backgroundSVG});
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
 `;
