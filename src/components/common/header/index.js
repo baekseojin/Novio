@@ -5,7 +5,7 @@ export default function Header() {
   return (
     <Container>
       <StyledLink to="/record">기록 센터</StyledLink>
-      <StyledLink to="/trainning">트레이닝 센터</StyledLink>
+      <StyledLink to="/training">트레이닝 센터</StyledLink>
       <StyledLink to="/community">커뮤니티 센터</StyledLink>
     </Container>
   );
