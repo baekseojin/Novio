@@ -3,15 +3,15 @@ import * as C from "../../components/index";
 
 export default function Main() {
   return (
-    <Container>
+    <MainContainer>
       <C.Header />
-    </Container>
+    </MainContainer>
   );
 }
 
-const Container = styled.div`
+const MainContainer = styled.div`
   width: 100vw;
   height: 3070px;
   top: 80px;
-  background-color: #8f94fb;
+  background-color: black;
 `;
