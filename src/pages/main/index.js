@@ -11,27 +11,20 @@ export default function Main() {
     <MainContainer>
       <C.Header />
       <Landing>
-        <h1>평화로운 대화생활을 선도하는 온라인 플랫폼, Novio</h1>
-
+        평화로운 대화생활을 선도하는 온라인 플랫폼, Novio
         <ElementContainer>
           <MainRecord />
-          <h1>대화생활을 기록하며 하루를 성찰하세요.</h1>
+          대화생활을 기록하며 하루를 성찰하세요.
         </ElementContainer>
-
         <ElementContainer>
           <MainTraining />
-          <h1>
-            여러가지 트레이닝 코스를 통해 비폭력 대화 프로세스를 익혀보세요.
-          </h1>
+          여러가지 트레이닝 코스를 통해 비폭력 대화 프로세스를 익혀보세요.
         </ElementContainer>
-
         <ElementContainer>
           <MainCommunity />
-          <h1>
-            글을 쓰며 본인의 경험을 알리고,
-            <br />
-            글을 읽으며 타인의 이야기에 공감해보세요.
-          </h1>
+          글을 쓰며 본인의 경험을 알리고,
+          <br />
+          글을 읽으며 타인의 이야기에 공감해보세요.
         </ElementContainer>
       </Landing>
     </MainContainer>
@@ -57,6 +50,9 @@ const Landing = styled.div`
   align-items: center;
   flex-direction: column;
   margin-top: 100px;
+
+  font-size: 30px;
+  font-weight: bold;
 `;
 
 const ElementContainer = styled.div`
