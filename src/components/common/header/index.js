@@ -28,8 +28,7 @@ const Container = styled.div`
   height: 80px;
 
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 0px;
 
   display: flex;
   gap: 400px;

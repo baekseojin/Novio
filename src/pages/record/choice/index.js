@@ -2,7 +2,7 @@ import * as C from "../../../components/index";
 import { styled } from "styled-components";
 import { Link } from "react-router-dom";
 
-import RecordBackground from "../../../assets/RecordBackground.svg";
+import Background from "../../../assets/Background.svg";
 import { ReactComponent as RecordButton } from "../../../assets/RecordButton.svg";
 import { ReactComponent as CalenderButton } from "../../../assets/CalenderButton.svg";
 
@@ -11,7 +11,7 @@ export default function Choice() {
     <Container>
       <C.Header />
       <ChoiceContainer>
-        <RecordBox Link to="Observation">
+        <RecordBox Link to="observation">
           <Bold>Record</Bold>
           <br />
           <Regular>오늘 하루 일상을 기록해요.</Regular>
@@ -33,24 +33,23 @@ export default function Choice() {
   );
 }
 
-const Container = styled.main`
+const Container = styled.div`
   width: 100vw;
   height: 100vh;
-  position: relative;
 
-  padding-top: 40px;
+  background-color: black;
+  background-image: url(${Background});
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  padding-top: 80px;
   box-sizing: border-box;
 `;
 
 const ChoiceContainer = styled.div`
   width: 100%;
   height: 100%;
-  background-color: black;
-  background-image: url(${RecordBackground});
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -60,7 +59,6 @@ const ChoiceContainer = styled.div`
 const RecordBox = styled(Link)`
   width: 500px;
   height: 500px;
-  background-color: white;
   color: white;
   border-radius: 20px;
   background-image: linear-gradient(to bottom right, #193cf6, #0a0e23);

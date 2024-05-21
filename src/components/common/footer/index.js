@@ -1,18 +1,24 @@
 import { styled } from "styled-components";
 
 export default function Footer() {
-  <FooterContainer>
-    <FooterText>ⓒ 2024 Novio. All Rights Reserved.</FooterText>
-  </FooterContainer>;
+  return (
+    <FooterContainer>
+      <FooterText>ⓒ 2024 Novio. All Rights Reserved.</FooterText>
+    </FooterContainer>
+  );
 }
 
 const FooterContainer = styled.div`
   width: 100vw;
   height: 100px;
   bottom: 0px;
-  background-color: black;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 200px;
 `;
 
 const FooterText = styled.div`
-  color: white;
+  color: #c4c4c4;
 `;

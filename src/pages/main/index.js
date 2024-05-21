@@ -47,18 +47,16 @@ export default function Main() {
 }
 
 const MainContainer = styled.div`
-  width: 100vw;
-  min-height: 100vh;
-  padding: 100px 0;
-
-  position: relative;
-  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
 
   background-color: black;
   background-image: url(${MainBackground});
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+
+  overflow-x: hidden;
 `;
 
 const Landing = styled.div`
@@ -67,16 +65,17 @@ const Landing = styled.div`
   gap: 200px;
   align-items: center;
   flex-direction: column;
-  margin-top: 100px;
+  padding-top: 150px;
 `;
 
 const ElementContainer = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
   text-align: center;
-  gap: 100px;
+
+  gap: 50px;
 `;
 
 const Bold = styled.div`

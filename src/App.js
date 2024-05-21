@@ -8,6 +8,7 @@ function App() {
       <Routes>
         <Route path="/" element={<P.Main />} />
         <Route path="/record" element={<P.Record />} />
+        <Route path="/record/observation" element={<P.Observation />} />
       </Routes>
     </Router>
   );
