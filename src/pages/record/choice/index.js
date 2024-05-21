@@ -11,7 +11,7 @@ export default function Choice() {
     <Container>
       <C.Header />
       <ChoiceContainer>
-        <RecordBox Link to="record">
+        <RecordBox Link to="Observation">
           <Bold>Record</Bold>
           <br />
           <Regular>오늘 하루 일상을 기록해요.</Regular>
@@ -20,7 +20,7 @@ export default function Choice() {
           </ImageContainer>
         </RecordBox>
 
-        <CalenderBox Link to="/calender">
+        <CalenderBox Link to="calender">
           <Bold>Calender</Bold>
           <br />
           <Regular>매일의 기록을 되돌아봐요.</Regular>
