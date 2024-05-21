@@ -27,13 +27,17 @@ export default function Main() {
           글을 읽으며 타인의 이야기에 공감해보세요.
         </ElementContainer>
       </Landing>
+      <C.Footer />
     </MainContainer>
   );
 }
 
 const MainContainer = styled.div`
   width: 100vw;
-  height: 3000px;
+  min-height: 100vh;
+  padding: 100px 0;
+
+  position: relative;
 
   background-color: black;
   background-image: url(${MainBackground});

@@ -7,6 +7,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<P.Main />} />
+        <Route path="/record" element={<P.Record />} />
       </Routes>
     </Router>
   );

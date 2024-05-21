@@ -6,9 +6,11 @@ import { ReactComponent as Logo } from "../../../assets/Novio.svg";
 export default function Header() {
   return (
     <Container>
-      <Link to="">
-        <Logo />
-      </Link>
+      <Novio>
+        <Link to="/">
+          <Logo />
+        </Link>
+      </Novio>
       <CenterElement>
         <StyledLink to="/record">기록 센터</StyledLink>
         <StyledLink to="/training">트레이닝 센터</StyledLink>
@@ -25,17 +27,20 @@ const Container = styled.div`
   width: 100%;
   height: 80px;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
 
+  display: flex;
+  gap: 400px;
+  align-items: center;
+  justify-content: center;
   background-color: white;
 `;
 
 const CenterElement = styled.div`
   display: flex;
   gap: 100px;
-  position: fixed;
 `;
 
 const StyledLink = styled(Link)`
@@ -46,5 +51,6 @@ const StyledLink = styled(Link)`
 const Mypage = styled(Link)`
   display: flex;
   text-decoration: none;
-  margin-left: 1200px;
 `;
+
+const Novio = styled.div``;
