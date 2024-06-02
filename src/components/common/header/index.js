@@ -24,10 +24,9 @@ export default function Header() {
 }
 
 const Container = styled.div`
-  width: 100%;
+  width: 100vw;
   height: 80px;
 
-  position: absolute;
   top: 0px;
 
   display: flex;

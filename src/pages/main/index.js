@@ -47,8 +47,8 @@ export default function Main() {
 }
 
 const MainContainer = styled.div`
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
 
   background-color: black;
   background-image: url(${MainBackground});
@@ -65,7 +65,7 @@ const Landing = styled.div`
   gap: 200px;
   align-items: center;
   flex-direction: column;
-  padding-top: 150px;
+  margin-top: 100px;
 `;
 
 const ElementContainer = styled.div`

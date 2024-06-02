@@ -43,13 +43,19 @@ const Container = styled.div`
   background-repeat: no-repeat;
   background-position: center;
 
-  padding-top: 80px;
   box-sizing: border-box;
+  overflow-x: hidden;
+  overflow-y: hidden;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `;
 
 const ChoiceContainer = styled.div`
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
