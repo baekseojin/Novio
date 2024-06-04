@@ -14,7 +14,7 @@ export default function Observation() {
         <SemiBold>
           어떤 상황에서 있는 그대로, 실제로 무엇이 일어나고 있는가를 관찰한다.
         </SemiBold>
-        <TextBox></TextBox>
+        <TextBox />
         <Link to="/record/feeling">
           <Button>다음</Button>
         </Link>

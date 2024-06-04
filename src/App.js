@@ -10,6 +10,7 @@ function App() {
         <Route path="/record" element={<P.Record />} />
         <Route path="/record/observation" element={<P.Observation />} />
         <Route path="/record/feeling" element={<P.Feeling />} />
+        <Route path="/record/need" element={<P.Need />} />
       </Routes>
     </Router>
   );

@@ -2,24 +2,25 @@ import { Link } from "react-router-dom";
 import * as C from "../../../components/index";
 import { styled } from "styled-components";
 import Background from "../../../assets/Background.svg";
-import { ReactComponent as FeelingTimeline } from "../../../assets/FeelingTimeline.svg";
+import { ReactComponent as NeedTimeline } from "../../../assets/NeedTimeline.svg";
 
-const Feeling = () => {
+const Need = () => {
   return (
     <Container>
       <C.Header />
-      <FeelingContainer>
-        <FeelingTimeline />
-        <Bold>그 상황에서 느꼈던 감정들을 적어주세요.</Bold>
+      <NeedContainer>
+        <NeedTimeline />
+        <Bold>위 상황에서 타인이 어떻게 행동해주길 원하나요?</Bold>
         <SemiBold>
-          그 행동을 보았을 때 어떻게 느끼는가를 말한다. 아픔, 무서움, 기쁨,
-          즐거움, 짜증 등의 느낌을 표현한다.
+          자신이 포착한 느낌이 내면의 어떤 욕구와 연결되는지를 말한다.
+          <br /> 다른 사람을 탓하기보다는 자신의 욕구와 희망, 기대, 가치관이나
+          생각을 인정함으로써 우리는 자신의 느낌에 대해 책임을 진다.
         </SemiBold>
         <TextBox />
-        <Link to="/record/need">
+        <Link to="/record/request">
           <Button>다음</Button>
         </Link>
-      </FeelingContainer>
+      </NeedContainer>
     </Container>
   );
 };
@@ -39,13 +40,14 @@ const Container = styled.div`
   box-sizing: border-box;
 `;
 
-const FeelingContainer = styled.div`
+const NeedContainer = styled.div`
   width: 100%;
   height: 100%;
 
   display: flex;
-  align-items: center;
 
+  align-items: center;
+  display: flex;
   justify-content: center;
   flex-direction: column;
 `;
@@ -62,6 +64,7 @@ const SemiBold = styled.div`
   font-weight: 600;
   color: #7e7e7d;
   margin-top: 25px;
+  text-align: center;
 `;
 
 const TextBox = styled.textarea`
@@ -104,4 +107,4 @@ const Button = styled.button`
   }
 `;
 
-export default Feeling;
+export default Need;
