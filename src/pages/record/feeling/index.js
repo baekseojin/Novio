@@ -44,9 +44,9 @@ const FeelingContainer = styled.div`
   height: 100%;
 
   display: flex;
-  margin-top: 60px;
-
   align-items: center;
+
+  justify-content: center;
   flex-direction: column;
 `;
 

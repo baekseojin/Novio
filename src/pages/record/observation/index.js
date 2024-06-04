@@ -43,9 +43,10 @@ const ObservationContainer = styled.div`
   height: 100%;
 
   display: flex;
-  margin-top: 60px;
 
   align-items: center;
+  display: flex;
+  justify-content: center;
   flex-direction: column;
 `;
 
