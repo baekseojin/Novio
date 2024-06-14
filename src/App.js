@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import * as C from "./components/index";
+
 import * as P from "./pages/index";
 
 function App() {
@@ -11,6 +11,7 @@ function App() {
         <Route path="/record/observation" element={<P.Observation />} />
         <Route path="/record/feeling" element={<P.Feeling />} />
         <Route path="/record/need" element={<P.Need />} />
+        <Route path="/record/request" element={<P.Request />} />
       </Routes>
     </Router>
   );

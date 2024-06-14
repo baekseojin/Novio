@@ -2,9 +2,9 @@ import * as C from "../../../components/index";
 import { styled } from "styled-components";
 import { Link } from "react-router-dom";
 
-import Background from "../../../assets/Background.svg";
-import { ReactComponent as RecordButton } from "../../../assets/RecordButton.svg";
-import { ReactComponent as CalenderButton } from "../../../assets/CalenderButton.svg";
+import Background from "../../../assets/images/Background.svg";
+import { ReactComponent as RecordButton } from "../../../assets/images/RecordButton.svg";
+import { ReactComponent as CalenderButton } from "../../../assets/images/CalenderButton.svg";
 
 export default function Choice() {
   return (

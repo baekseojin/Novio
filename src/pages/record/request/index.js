@@ -1,28 +1,27 @@
+import { styled } from "styled-components";
 import { Link } from "react-router-dom";
 import * as C from "../../../components/index";
-import { styled } from "styled-components";
 import Background from "../../../assets/images/Background.svg";
-import FeelingTimeline from "../../../assets/images/FeelingTimeline";
+import RequestTimeline from "../../../assets/images/RequestTimeline";
 
-const Feeling = () => {
+export default function Request() {
   return (
     <Container>
       <C.Header />
-      <FeelingContainer>
-        <FeelingTimeline />
-        <Bold>그 상황에서 느꼈던 감정들을 적어주세요.</Bold>
+      <RequestContainer>
+        <RequestTimeline />
+        <Bold>OOO님! 오늘 타인과 대화하며 어떤 일이 있었나요?</Bold>
         <SemiBold>
-          그 행동을 보았을 때 어떻게 느끼는가를 말한다. 아픔, 무서움, 기쁨,
-          즐거움, 짜증 등의 느낌을 표현한다.
+          어떤 상황에서 있는 그대로, 실제로 무엇이 일어나고 있는가를 관찰한다.
         </SemiBold>
         <TextBox />
-        <Link to="/record/need">
+        <Link to="/record/feeling">
           <Button>다음</Button>
         </Link>
-      </FeelingContainer>
+      </RequestContainer>
     </Container>
   );
-};
+}
 
 const Container = styled.div`
   width: 100vw;
@@ -39,13 +38,14 @@ const Container = styled.div`
   box-sizing: border-box;
 `;
 
-const FeelingContainer = styled.div`
+const RequestContainer = styled.div`
   width: 100%;
   height: 100%;
 
   display: flex;
-  align-items: center;
 
+  align-items: center;
+  display: flex;
   justify-content: center;
   flex-direction: column;
 `;
@@ -103,5 +103,3 @@ const Button = styled.button`
     transform: scale(1.1);
   }
 `;
-
-export default Feeling;

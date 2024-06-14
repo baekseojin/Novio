@@ -1,10 +1,10 @@
 import { styled } from "styled-components";
 import * as C from "../../components/index";
 
-import MainBackground from "../../assets/MainBackground.svg";
-import { ReactComponent as MainRecord } from "../../assets/MainRecord.svg";
-import { ReactComponent as MainTraining } from "../../assets/MainTraining.svg";
-import { ReactComponent as MainCommunity } from "../../assets/MainCommunity.svg";
+import MainBackground from "../../assets/images/MainBackground.svg";
+import { ReactComponent as MainRecord } from "../../assets/images/MainRecord.svg";
+import { ReactComponent as MainTraining } from "../../assets/images/MainTraining.svg";
+import { ReactComponent as MainCommunity } from "../../assets/images/MainCommunity.svg";
 import { Link } from "react-router-dom";
 
 export default function Main() {

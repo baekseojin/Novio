@@ -1,8 +1,8 @@
 import { styled } from "styled-components";
 import { Link } from "react-router-dom";
 import * as C from "../../../components/index";
-import Background from "../../../assets/Background.svg";
-import { ReactComponent as ObservationTimeline } from "../../../assets/ObservationTimeline.svg";
+import Background from "../../../assets/images/Background.svg";
+import ObservationTimeline from "../../../assets/images/ObservationTimeline";
 
 export default function Observation() {
   return (

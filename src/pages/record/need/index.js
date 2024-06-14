@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import * as C from "../../../components/index";
 import { styled } from "styled-components";
-import Background from "../../../assets/Background.svg";
-import { ReactComponent as NeedTimeline } from "../../../assets/NeedTimeline.svg";
+import Background from "../../../assets/images/Background.svg";
+import NeedTimeline from "../../../assets/images/NeedTimeline";
 
 const Need = () => {
   return (
