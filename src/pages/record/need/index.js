@@ -17,9 +17,14 @@ const Need = () => {
           생각을 인정함으로써 우리는 자신의 느낌에 대해 책임을 진다.
         </SemiBold>
         <TextBox />
-        <Link to="/record/request">
-          <Button>다음</Button>
-        </Link>
+        <ButtonContainer>
+          <Link to="/record/feeling">
+            <Button>이전</Button>
+          </Link>
+          <Link to="/record/request">
+            <Button>다음</Button>
+          </Link>
+        </ButtonContainer>
       </NeedContainer>
     </Container>
   );
@@ -84,6 +89,11 @@ const TextBox = styled.textarea`
     border: 2px solid #0a7bff;
     outline: none;
   }
+`;
+
+const ButtonContainer = styled.div`
+  display: flex;
+  gap: 200px;
 `;
 
 const Button = styled.button`

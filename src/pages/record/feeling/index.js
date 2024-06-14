@@ -16,9 +16,14 @@ const Feeling = () => {
           즐거움, 짜증 등의 느낌을 표현한다.
         </SemiBold>
         <TextBox />
-        <Link to="/record/need">
-          <Button>다음</Button>
-        </Link>
+        <ButtonContainer>
+          <Link to="/record/observation">
+            <Button>이전</Button>
+          </Link>
+          <Link to="/record/need">
+            <Button>다음</Button>
+          </Link>
+        </ButtonContainer>
       </FeelingContainer>
     </Container>
   );
@@ -81,6 +86,11 @@ const TextBox = styled.textarea`
     border: 2px solid #0a7bff;
     outline: none;
   }
+`;
+
+const ButtonContainer = styled.div`
+  display: flex;
+  gap: 200px;
 `;
 
 const Button = styled.button`

@@ -15,9 +15,15 @@ export default function Request() {
           어떤 상황에서 있는 그대로, 실제로 무엇이 일어나고 있는가를 관찰한다.
         </SemiBold>
         <TextBox />
-        <Link to="/record/feeling">
-          <Button>다음</Button>
-        </Link>
+
+        <ButtonContainer>
+          <Link to="/record/need">
+            <Button>이전</Button>
+          </Link>
+          <Link to="/record/need">
+            <Button>다음</Button>
+          </Link>
+        </ButtonContainer>
       </RequestContainer>
     </Container>
   );
@@ -81,6 +87,11 @@ const TextBox = styled.textarea`
     border: 2px solid #0a7bff;
     outline: none;
   }
+`;
+
+const ButtonContainer = styled.div`
+  display: flex;
+  gap: 200px;
 `;
 
 const Button = styled.button`
