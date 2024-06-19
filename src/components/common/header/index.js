@@ -34,6 +34,7 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
   background-color: white;
+  position: fixed;
 `;
 
 const CenterElement = styled.div`

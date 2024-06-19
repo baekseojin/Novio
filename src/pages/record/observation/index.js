@@ -41,9 +41,9 @@ const Container = styled.div`
 const ObservationContainer = styled.div`
   width: 100%;
   height: 100%;
+  margin-top: 60px;
 
   display: flex;
-
   align-items: center;
   display: flex;
   justify-content: center;
