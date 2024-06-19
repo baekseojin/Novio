@@ -12,6 +12,8 @@ function App() {
         <Route path="/record/feeling" element={<P.Feeling />} />
         <Route path="/record/need" element={<P.Need />} />
         <Route path="/record/request" element={<P.Request />} />
+        <Route path="/record/confirm" element={<P.Confirm />} />
+        <Route path="/record/completion" element={<P.Completion />} />
       </Routes>
     </Router>
   );
