@@ -1,10 +1,19 @@
+import React from "react";
 import { styled } from "styled-components";
 import { Link } from "react-router-dom";
 import * as C from "../../../components/index";
+import { useRecord } from "../recordContext";
 import Background from "../../../assets/images/Background.svg";
 import ObservationTimeline from "../../../assets/images/ObservationTimeline";
 
 export default function Observation() {
+  const { record, updateRecord } = useRecord();
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    updateRecord(name, value);
+  };
+
   return (
     <Container>
       <C.Header />
@@ -14,7 +23,11 @@ export default function Observation() {
         <SemiBold>
           어떤 상황에서 있는 그대로, 실제로 무엇이 일어나고 있는가를 관찰한다.
         </SemiBold>
-        <TextBox />
+        <TextBox
+          name="observation"
+          value={record.observation}
+          onChange={handleInputChange}
+        />
         <Link to="/record/feeling">
           <Button>다음</Button>
         </Link>
@@ -26,13 +39,11 @@ export default function Observation() {
 const Container = styled.div`
   width: 100vw;
   height: 100vh;
-
   background-color: black;
   background-image: url(${Background});
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-
   overflow-x: hidden;
   overflow-y: hidden;
   box-sizing: border-box;
@@ -42,10 +53,8 @@ const ObservationContainer = styled.div`
   width: 100%;
   height: 100%;
   margin-top: 60px;
-
   display: flex;
   align-items: center;
-  display: flex;
   justify-content: center;
   flex-direction: column;
 `;
@@ -68,10 +77,8 @@ const TextBox = styled.textarea`
   width: 1092px;
   height: 350px;
   padding: 10px;
-
   background-color: white;
   color: #7e7e7d;
-
   border-radius: 15px;
   margin-top: 50px;
   margin-bottom: 50px;
@@ -89,9 +96,7 @@ const Button = styled.button`
   border-radius: 100px;
   border: none;
   margin-bottom: 50px;
-
   background: linear-gradient(to right, #a799fd, #3423ff);
-
   color: white;
   font-weight: Bold;
   font-size: 20px;
