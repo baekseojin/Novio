@@ -3,8 +3,16 @@ import * as C from "../../../components/index";
 import { styled } from "styled-components";
 import Background from "../../../assets/images/Background.svg";
 import NeedTimeline from "../../../assets/images/NeedTimeline";
+import { useRecord } from "../recordContext";
 
 const Need = () => {
+  const { record, updateRecord } = useRecord();
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    updateRecord(name, value);
+  };
+
   return (
     <Container>
       <C.Header />
@@ -16,7 +24,7 @@ const Need = () => {
           <br /> 다른 사람을 탓하기보다는 자신의 욕구와 희망, 기대, 가치관이나
           생각을 인정함으로써 우리는 자신의 느낌에 대해 책임을 진다.
         </SemiBold>
-        <TextBox />
+        <TextBox name="need" value={record.need} onChange={handleInputChange} />
         <ButtonContainer>
           <Link to="/record/feeling">
             <Button>이전</Button>

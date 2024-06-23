@@ -3,8 +3,16 @@ import * as C from "../../../components/index";
 import { styled } from "styled-components";
 import Background from "../../../assets/images/Background.svg";
 import FeelingTimeline from "../../../assets/images/FeelingTimeline";
+import { useRecord } from "../recordContext";
 
 const Feeling = () => {
+  const { record, updateRecord } = useRecord(); // record 상태와 updateRecord 함수를 가져옵니다.
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    updateRecord(name, value);
+  };
+
   return (
     <Container>
       <C.Header />
@@ -15,7 +23,11 @@ const Feeling = () => {
           그 행동을 보았을 때 어떻게 느끼는가를 말한다. 아픔, 무서움, 기쁨,
           즐거움, 짜증 등의 느낌을 표현한다.
         </SemiBold>
-        <TextBox />
+        <TextBox
+          name="feeling"
+          value={record.feeling}
+          onChange={handleInputChange}
+        />
         <ButtonContainer>
           <Link to="/record/observation">
             <Button>이전</Button>

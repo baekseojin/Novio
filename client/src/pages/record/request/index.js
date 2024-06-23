@@ -3,8 +3,16 @@ import { Link } from "react-router-dom";
 import * as C from "../../../components/index";
 import Background from "../../../assets/images/Background.svg";
 import RequestTimeline from "../../../assets/images/RequestTimeline";
+import { useRecord } from "../recordContext";
 
 export default function Request() {
+  const { record, updateRecord } = useRecord();
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    updateRecord(name, value);
+  };
+
   return (
     <Container>
       <C.Header />
@@ -20,8 +28,11 @@ export default function Request() {
           막연하고 추상적이거나 모호한 말을 피하고, 우리가 원하지 않는 것보다
           우리가 원하는 것을 말함으로써 긍정적인 행동을 부탁한다.
         </SemiBold>
-        <TextBox />
-
+        <TextBox
+          name="request"
+          value={record.request}
+          onChange={handleInputChange}
+        />
         <ButtonContainer>
           <Link to="/record/need">
             <Button>이전</Button>
