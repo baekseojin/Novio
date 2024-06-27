@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import styled from "styled-components";
+import * as C from "../../../components/index";
+
 import Background from "../../../assets/images/ConfirmBackground.svg";
 import { useRecord } from "../recordContext";
 
@@ -24,10 +26,7 @@ export default function Confirm() {
       });
 
       if (response.ok) {
-        setMessage("기록이 성공적으로 제출되었습니다.");
-        setTimeout(() => {
-          navigate("/record/completion");
-        }, 2000);
+        navigate("/record/completion");
       } else {
         setMessage("기록 제출에 실패했습니다. 다시 시도해주세요.");
       }
@@ -41,8 +40,8 @@ export default function Confirm() {
 
   return (
     <Container>
+      <C.Header />
       <HeadingText>수정할 내용이 없는지 한 번 더 확인해보세요.</HeadingText>
-
       <ConfirmBox>
         <TextContainer>
           <Bold>OOO님! 오늘 타인과 대화하며 어떤 일이 있었나요?</Bold>

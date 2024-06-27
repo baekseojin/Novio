@@ -8,7 +8,10 @@ export default function Completion() {
     <Container>
       <C.Header />
       <TextContainer>
-        <Bold>2024.06.19 기록이 완료되었어요!</Bold>
+        <Bold>
+          2024.07.04 <br />
+          <br /> 기록이 완료되었어요!
+        </Bold>
       </TextContainer>
       <ButtonContainer>
         <Link to="/">
