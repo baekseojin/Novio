@@ -1,22 +1,53 @@
-import { Link } from "react-router-dom";
-import { styled } from "styled-components";
-import * as C from "../../../components/index";
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import styled from "styled-components";
 import Background from "../../../assets/images/ConfirmBackground.svg";
-import { useRecord } from "../recordContext"; // useRecord 훅을 import 합니다.
+import { useRecord } from "../recordContext";
 
 export default function Confirm() {
-  const { record } = useRecord(); // record 상태를 가져옵니다.
+  const { record } = useRecord();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [message, setMessage] = useState("");
+  const navigate = useNavigate();
+
+  const handleSubmit = async () => {
+    setIsSubmitting(true);
+    setMessage("");
+
+    try {
+      const response = await fetch("http://localhost:5000/api/record", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(record),
+      });
+
+      if (response.ok) {
+        setMessage("기록이 성공적으로 제출되었습니다.");
+        setTimeout(() => {
+          navigate("/record/completion");
+        }, 2000);
+      } else {
+        setMessage("기록 제출에 실패했습니다. 다시 시도해주세요.");
+      }
+    } catch (error) {
+      console.error("Failed to submit record", error);
+      setMessage("기록 제출 중 오류가 발생했습니다. 다시 시도해주세요.");
+    }
+
+    setIsSubmitting(false);
+  };
 
   return (
     <Container>
-      <C.Header />
       <HeadingText>수정할 내용이 없는지 한 번 더 확인해보세요.</HeadingText>
 
       <ConfirmBox>
         <TextContainer>
           <Bold>OOO님! 오늘 타인과 대화하며 어떤 일이 있었나요?</Bold>
           <Hr />
-          <Regular>{record.observation}</Regular>{" "}
+          <Regular>{record.observation}</Regular>
         </TextContainer>
         <TextContainer>
           <Bold>그 상황에서 느꼈던 감정들을 적어주세요.</Bold>
@@ -35,13 +66,14 @@ export default function Confirm() {
           <Hr />
           <Regular>{record.request}</Regular>
         </TextContainer>
+        {message && <Message>{message}</Message>}
         <ButtonContainer>
           <Link to="/record/request">
             <Button>이전</Button>
           </Link>
-          <Link to="/record/completion">
-            <Button>다음</Button>
-          </Link>
+          <Button onClick={handleSubmit} disabled={isSubmitting}>
+            {isSubmitting ? "전송 중..." : "다음"}
+          </Button>
         </ButtonContainer>
       </ConfirmBox>
     </Container>
@@ -126,7 +158,7 @@ const Button = styled.button`
   margin-bottom: 50px;
   background: linear-gradient(to right, #a799fd, #3423ff);
   color: white;
-  font-weight: Bold;
+  font-weight: bold;
   font-size: 20px;
   cursor: pointer;
 
@@ -135,4 +167,12 @@ const Button = styled.button`
     box-shadow: 0 0 20px #6fc5ff50;
     transform: scale(1.1);
   }
+`;
+
+const Message = styled.div`
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  margin-top: 20px;
+  text-align: center;
 `;
