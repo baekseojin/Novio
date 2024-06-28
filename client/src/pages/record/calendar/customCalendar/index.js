@@ -1,12 +1,6 @@
 import React, { useState } from "react";
 import moment from "moment";
-import {
-  StyledCalendarWrapper,
-  StyledCalendar,
-  StyledDate,
-  StyledToday,
-  StyledDot,
-} from "./styles";
+import { StyledCalendarWrapper, StyledCalendar, StyledDot } from "./styles";
 import "react-calendar/dist/Calendar.css";
 
 const CustomCalendar = () => {
@@ -17,12 +11,6 @@ const CustomCalendar = () => {
 
   const handleDateChange = (newDate) => {
     setDate(newDate);
-  };
-
-  const handleTodayClick = () => {
-    const today = new Date();
-    setActiveStartDate(today);
-    setDate(today);
   };
 
   return (
@@ -44,20 +32,12 @@ const CustomCalendar = () => {
         }
         tileContent={({ date, view }) => {
           let html = [];
-          if (
-            view === "month" &&
-            date.getMonth() === today.getMonth() &&
-            date.getDate() === today.getDate()
-          ) {
-            html.push(<StyledToday key={"today"}>오늘</StyledToday>);
-          }
           if (attendDay.find((x) => x === moment(date).format("YYYY-MM-DD"))) {
             html.push(<StyledDot key={moment(date).format("YYYY-MM-DD")} />);
           }
           return <>{html}</>;
         }}
       />
-      <StyledDate onClick={handleTodayClick}>오늘</StyledDate>
     </StyledCalendarWrapper>
   );
 };

@@ -9,9 +9,6 @@ const Calendar = () => {
   );
 };
 
-const CalendarContainer = styled.div`
-  background-color: black;
-  color: white;
-`;
+const CalendarContainer = styled.div``;
 
 export default Calendar;

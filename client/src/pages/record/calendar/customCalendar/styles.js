@@ -3,12 +3,16 @@ import Calendar from "react-calendar";
 
 export const StyledCalendarWrapper = styled.div`
   width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
+  align-items: center;
+
   position: relative;
 
   .react-calendar {
-    width: 100%;
+    width: 600px;
+    height: 800px;
     border: none;
     border-radius: 0.5rem;
     box-shadow: 4px 2px 10px 0px rgba(0, 0, 0, 0.13);
@@ -17,7 +21,7 @@ export const StyledCalendarWrapper = styled.div`
   }
 
   .react-calendar__month-view abbr {
-    color: ${(props) => props.theme.gray_1};
+    color: black;
   }
 
   .react-calendar__navigation {
@@ -26,7 +30,7 @@ export const StyledCalendarWrapper = styled.div`
 
   .react-calendar__navigation button {
     font-weight: 800;
-    font-size: 1rem;
+    font-size: 1.5rem;
   }
 
   .react-calendar__navigation button:focus {
@@ -35,7 +39,7 @@ export const StyledCalendarWrapper = styled.div`
 
   .react-calendar__navigation button:disabled {
     background-color: white;
-    color: ${(props) => props.theme.darkBlack};
+    color: black;
   }
 
   .react-calendar__navigation__label {
@@ -48,13 +52,17 @@ export const StyledCalendarWrapper = styled.div`
   }
 
   .react-calendar__month-view__weekdays__weekday--weekend abbr[title="일요일"] {
-    color: ${(props) => props.theme.red_1};
+    color: red;
+  }
+
+  .react-calendar__month-view__weekdays__weekday--weekend abbr[title="토요일"] {
+    color: blue;
   }
 
   .react-calendar__tile--now {
     background: none;
     abbr {
-      color: ${(props) => props.theme.primary_2};
+      color: #482bd9;
     }
   }
 
@@ -90,8 +98,9 @@ export const StyledCalendarWrapper = styled.div`
   .react-calendar__tile:enabled:hover,
   .react-calendar__tile:enabled:focus,
   .react-calendar__tile--active {
-    background-color: ${(props) => props.theme.yellow_2};
+    // background-color: #657ff5;
     border-radius: 0.3rem;
+    border-color: #657ff5;
   }
 `;
 

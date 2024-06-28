@@ -17,7 +17,7 @@ export default function Completion() {
         <Link to="/">
           <Button>홈 화면</Button>
         </Link>
-        <Link to="/calender">
+        <Link to="/record/calendar">
           <Button>캘린더</Button>
         </Link>
       </ButtonContainer>
