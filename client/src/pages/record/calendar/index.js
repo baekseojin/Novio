@@ -9,6 +9,12 @@ const Calendar = () => {
       <C.Header />
       <CalendarContainer>
         <CustomCalendar />
+        <TextContainer>
+          <Box />
+          <Box />
+          <Box />
+          <Box />
+        </TextContainer>
       </CalendarContainer>
     </Container>
   );
@@ -40,6 +46,22 @@ const CalendarContainer = styled.div`
   align-items: center;
 
   margin-top: 80px;
+  gap: 200px;
+`;
+
+const TextContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  gap: 50px;
+`;
+
+const Box = styled.div`
+  width: 500px;
+  height: 120px;
+  background-color: white;
 `;
 
 export default Calendar;
