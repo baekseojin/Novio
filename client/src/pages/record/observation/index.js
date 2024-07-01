@@ -76,17 +76,27 @@ const SemiBold = styled.div`
 const TextBox = styled.textarea`
   width: 1092px;
   height: 350px;
-  padding: 10px;
+  padding: 8px;
   background-color: white;
   color: #7e7e7d;
-  border-radius: 15px;
-  margin-top: 50px;
-  margin-bottom: 50px;
+  border: 2px solid #aaa;
+  border-radius: 4px;
+  margin: 8px 0;
+  outline: none;
+  box-sizing: border-box;
+  transition: 0.3s;
   resize: none;
 
+  font-size: 18px;
+  color: black;
+
+  margin-top: 50px;
+  margin-bottom: 50px;
+  font-family: "PretendardVariable", sans-serif;
+
   &:focus {
-    border: 2px solid #0a7bff;
-    outline: none;
+    border-color: dodgerblue;
+    box-shadow: 0 0 20px 0 dodgerblue;
   }
 `;
 
