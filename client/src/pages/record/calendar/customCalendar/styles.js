@@ -7,12 +7,11 @@ export const StyledCalendarWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-
   position: relative;
 
   .react-calendar {
-    width: 600px;
-    height: 800px;
+    width: 420px;
+    height: 600px;
     border: none;
     border-radius: 0.5rem;
     box-shadow: 4px 2px 10px 0px rgba(0, 0, 0, 0.13);
@@ -30,7 +29,7 @@ export const StyledCalendarWrapper = styled.div`
 
   .react-calendar__navigation button {
     font-weight: 800;
-    font-size: 1.5rem;
+    font-size: 1.7rem;
   }
 
   .react-calendar__navigation button:focus {
@@ -49,6 +48,8 @@ export const StyledCalendarWrapper = styled.div`
   .react-calendar__month-view__weekdays abbr {
     text-decoration: none;
     font-weight: 800;
+    font-size: 1.2rem; /* 요일 폰트 크기 */
+    color: #b3b3b3;
   }
 
   .react-calendar__month-view__weekdays__weekday--weekend abbr[title="일요일"] {
@@ -82,6 +83,8 @@ export const StyledCalendarWrapper = styled.div`
   .react-calendar__tile {
     padding: 5px 0px 18px;
     position: relative;
+    font-size: 1rem;
+    font-weight: bold;
   }
 
   .react-calendar__year-view__months__month {
@@ -98,7 +101,7 @@ export const StyledCalendarWrapper = styled.div`
   .react-calendar__tile:enabled:hover,
   .react-calendar__tile:enabled:focus,
   .react-calendar__tile--active {
-    // background-color: #657ff5;
+    background-color: #657ff5;
     border-radius: 0.3rem;
     border-color: #657ff5;
   }
