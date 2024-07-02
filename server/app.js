@@ -7,7 +7,7 @@ const dotenv = require("dotenv");
 dotenv.config();
 
 const app = express();
-const port = 5000;
+const port = process.env.PORT || 5000;
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -54,6 +54,18 @@ app.post("/api/record", (req, res) => {
   } else {
     res.status(400).json({ error: "Invalid data format" });
   }
+});
+
+app.get("/records", (req, res) => {
+  const { date } = req.query;
+  const query = `SELECT * FROM record WHERE DATE(time) = ?`;
+  connection.query(query, [date], (error, results) => {
+    if (error) throw error;
+
+    console.log(results);
+
+    res.json(results);
+  });
 });
 
 // 서버 시작
