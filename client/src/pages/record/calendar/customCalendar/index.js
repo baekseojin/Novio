@@ -1,16 +1,51 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import moment from "moment";
+import axios from "axios";
 import { StyledCalendarWrapper, StyledCalendar, StyledDot } from "./styles";
 import "react-calendar/dist/Calendar.css";
 
-const CustomCalendar = () => {
+const CustomCalendar = ({ onDateSelect }) => {
   const today = new Date();
   const [date, setDate] = useState(today);
   const [activeStartDate, setActiveStartDate] = useState(new Date());
-  const attendDay = ["2023-12-03", "2023-12-13"]; // 출석한 날짜 예시
+  const [attendDay, setAttendDay] = useState([]);
+  const [diaryText, setDiaryText] = useState("");
+
+  useEffect(() => {
+    fetchRecordDates(); // 컴포넌트 마운트 시 호출
+  }, []);
+
+  const fetchRecordDates = () => {
+    axios
+      .get("http://localhost:5000/records", {
+        params: {
+          date: moment(date).format("YYYY-MM-DD"),
+        },
+      })
+      .then((response) => {
+        const dates = response.data.map((record) => ({
+          date: moment(record.time).format("YYYY-MM-DD"),
+          observation: record.record_observation,
+          feeling: record.record_feeling,
+          need: record.record_need,
+          request: record.record_request,
+        }));
+        setAttendDay(dates);
+        if (dates.length === 0) {
+          setDiaryText("오늘 일기를 작성하지 않았어요.");
+        } else {
+          setDiaryText("");
+        }
+      })
+      .catch((error) => {
+        console.log("Error fetching record dates:", error);
+      });
+  };
 
   const handleDateChange = (newDate) => {
     setDate(newDate);
+    onDateSelect(moment(newDate).format("YYYY-MM-DD"));
+    fetchRecordDates();
   };
 
   return (
@@ -32,12 +67,16 @@ const CustomCalendar = () => {
         }
         tileContent={({ date, view }) => {
           let html = [];
-          if (attendDay.find((x) => x === moment(date).format("YYYY-MM-DD"))) {
+          if (
+            attendDay.length > 0 &&
+            attendDay.find((x) => x.date === moment(date).format("YYYY-MM-DD"))
+          ) {
             html.push(<StyledDot key={moment(date).format("YYYY-MM-DD")} />);
           }
           return <>{html}</>;
         }}
       />
+      <div>{diaryText}</div>
     </StyledCalendarWrapper>
   );
 };

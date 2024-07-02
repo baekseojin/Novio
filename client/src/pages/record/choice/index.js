@@ -21,7 +21,7 @@ export default function Choice() {
         </RecordBox>
 
         <CalenderBox Link to="calendar">
-          <Bold>Calender</Bold>
+          <Bold>Calendar</Bold>
           <br />
           <Regular>매일의 기록을 되돌아봐요.</Regular>
           <ImageContainer>

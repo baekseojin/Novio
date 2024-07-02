@@ -70,9 +70,7 @@ export default function Confirm() {
           <Link to="/record/request">
             <Button>이전</Button>
           </Link>
-          <Button onClick={handleSubmit} disabled={isSubmitting}>
-            {isSubmitting ? "전송 중..." : "다음"}
-          </Button>
+          <Button onClick={handleSubmit}>다음</Button>
         </ButtonContainer>
       </ConfirmBox>
     </Container>

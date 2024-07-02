@@ -10,7 +10,7 @@ export const StyledCalendarWrapper = styled.div`
   position: relative;
 
   .react-calendar {
-    width: 420px;
+    width: 500px;
     height: 600px;
     border: none;
     border-radius: 0.5rem;
