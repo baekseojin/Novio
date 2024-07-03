@@ -23,6 +23,10 @@ function App() {
             path="/training/scenario/start"
             element={<P.ScenarioStart />}
           />
+          <Route
+            path="/training/scenario/problem"
+            element={<P.ScenarioProblem />}
+          />
         </Routes>
       </Router>
     </RecordProvider>

@@ -44,20 +44,32 @@ const CenterElement = styled.div`
 `;
 
 const StyledLink = styled(Link)`
-  text-decoration: none;
+  position: relative;
+  padding: 1.5rem 1rem;
+  border-radius: 0.8rem;
+  cursor: pointer;
+  transition: 0.25s ease-in-out;
+
   color: white;
-  padding: 1rem;
-  border-radius: 5px;
+  text-decoration: none;
 
-  transition: 0.2s ease-in-out;
-
-  &:hover {
-    background: #ffffff22;
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 0.2rem;
+    width: ${({ isLink }) => (isLink ? "80%" : "0")};
+    background-color: white;
+    border-radius: 999rem;
+    transition: 0.3s ease-in-out;
   }
 
-  &:active {
-    transition: 0.1s ease-in-out;
-    background: #ffffff44;
+  &:hover {
+    &::before {
+      width: 80%;
+    }
   }
 `;
 
