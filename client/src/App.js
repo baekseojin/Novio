@@ -19,6 +19,10 @@ function App() {
           <Route path="/record/calendar" element={<P.Calendar />} />
           <Route path="/record/calendar/update" element={<P.Update />} />
           <Route path="/training" element={<P.Training />} />
+          <Route
+            path="/training/scenario/start"
+            element={<P.ScenarioStart />}
+          />
         </Routes>
       </Router>
     </RecordProvider>

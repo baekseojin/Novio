@@ -14,7 +14,7 @@ const Training = () => {
       <Landing>
         <ElementContainer>
           <Bold>가상의 상황에 어떻게 대처할 것인지 연습해보세요.</Bold>
-          <Link to="scenario">
+          <Link to="scenario/start">
             <Scenario />
           </Link>
         </ElementContainer>
