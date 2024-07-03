@@ -81,10 +81,26 @@ export const StyledCalendarWrapper = styled.div`
   }
 
   .react-calendar__tile {
-    padding: 5px 0px 18px;
+    padding: 20px 5px 30px;
     position: relative;
-    font-size: 1rem;
-    font-weight: bold;
+    font-size: 1.2rem;
+  }
+
+  .react-calendar__tile button {
+    display: none;
+  }
+
+  .react-calendar__tile--hasActive button {
+    display: block;
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    background-color: #657ff5;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
   }
 
   .react-calendar__year-view__months__month {

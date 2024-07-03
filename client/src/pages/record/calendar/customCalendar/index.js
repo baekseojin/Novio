@@ -1,7 +1,12 @@
 import React, { useState, useEffect } from "react";
 import moment from "moment";
 import axios from "axios";
-import { StyledCalendarWrapper, StyledCalendar, StyledDot } from "./styles";
+import {
+  StyledCalendarWrapper,
+  StyledCalendar,
+  StyledDot,
+  StyledDate,
+} from "./styles";
 import "react-calendar/dist/Calendar.css";
 
 const CustomCalendar = ({ onDateSelect }) => {
@@ -73,10 +78,10 @@ const CustomCalendar = ({ onDateSelect }) => {
           ) {
             html.push(<StyledDot key={moment(date).format("YYYY-MM-DD")} />);
           }
+
           return <>{html}</>;
         }}
       />
-      <div>{diaryText}</div>
     </StyledCalendarWrapper>
   );
 };

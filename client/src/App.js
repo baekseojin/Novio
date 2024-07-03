@@ -17,6 +17,7 @@ function App() {
           <Route path="/record/confirm" element={<P.Confirm />} />
           <Route path="/record/completion" element={<P.Completion />} />
           <Route path="/record/calendar" element={<P.Calendar />} />
+          <Route path="/record/calendar/update" element={<P.Update />} />
         </Routes>
       </Router>
     </RecordProvider>
