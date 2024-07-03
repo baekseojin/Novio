@@ -8,7 +8,6 @@ const ScenarioStart = () => {
   return (
     <Container>
       <C.Header />
-      <SlideUpBold>당신이라면 어떻게 말할 것인가?</SlideUpBold>
       <SlideUpBold>
         <FadeInBold>갈등 상황에서 본인만의 답변을 적어보세요!</FadeInBold>
       </SlideUpBold>
@@ -195,7 +194,6 @@ const ContainerStars = styled.div`
 
 const Strong = styled.strong`
   z-index: 2;
-  font-family: "Avalors Personal Use";
   font-size: 50px;
   letter-spacing: 5px;
   color: #ffffff;
