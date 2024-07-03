@@ -33,8 +33,9 @@ const Container = styled.div`
   gap: 400px;
   align-items: center;
   justify-content: center;
-  background-color: white;
   position: fixed;
+
+  backdrop-filter: brightness(80%) blur(10px);
 `;
 
 const CenterElement = styled.div`
@@ -44,7 +45,20 @@ const CenterElement = styled.div`
 
 const StyledLink = styled(Link)`
   text-decoration: none;
-  color: black;
+  color: white;
+  padding: 1rem;
+  border-radius: 5px;
+
+  transition: 0.2s ease-in-out;
+
+  &:hover {
+    background: #ffffff22;
+  }
+
+  &:active {
+    transition: 0.1s ease-in-out;
+    background: #ffffff44;
+  }
 `;
 
 const Mypage = styled(Link)`
