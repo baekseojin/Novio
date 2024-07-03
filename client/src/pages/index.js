@@ -8,3 +8,4 @@ export { default as Confirm } from "./record/confirm";
 export { default as Completion } from "./record/completion";
 export { default as Calendar } from "./record/calendar/index";
 export { default as Update } from "./record/calendar/update/index";
+export { default as Training } from "./training/index";
