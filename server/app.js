@@ -68,6 +68,68 @@ app.get("/records", (req, res) => {
   });
 });
 
+// PUT 요청 처리 (특정 날짜의 일기 수정)
+app.put("/api/record", (req, res) => {
+  const { date } = req.body;
+  const record = req.body;
+
+  console.log(`Updating record for date: ${date}`, record);
+
+  if (record && date) {
+    const { observation, feeling, need, request } = record;
+    const query =
+      "UPDATE record SET record_observation = ?, record_feeling = ?, record_need = ?, record_request = ? WHERE DATE(time) = ?";
+    const values = [observation, feeling, need, request, date];
+
+    connection.query(query, values, (err, result) => {
+      if (err) {
+        console.error("Error updating record:", err);
+        res.status(500).json({
+          error: "레코드 데이터를 업데이트하는데 실패했습니다.",
+        });
+        return;
+      }
+      if (result.affectedRows === 0) {
+        res
+          .status(404)
+          .json({ message: "해당 날짜를 가진 레코드를 찾을 수 없습니다." });
+      } else {
+        res.status(200).json({ message: "데이터 성공적으로 업데이트됨." });
+      }
+    });
+  } else {
+    res.status(400).json({ error: "Invalid data format" });
+  }
+});
+// DELETE 요청 처리 (특정 날짜의 일기 삭제)
+app.delete("/api/record", (req, res) => {
+  const { date } = req.body;
+
+  console.log(`Deleting record for date: ${date}`);
+
+  if (date) {
+    const query = "DELETE FROM record WHERE DATE(time) = ?";
+    connection.query(query, [date], (err, result) => {
+      if (err) {
+        console.error("Error deleting record:", err);
+        res.status(500).json({
+          error: "레코드 데이터를 삭제하는데 실패했습니다.",
+        });
+        return;
+      }
+      if (result.affectedRows === 0) {
+        res
+          .status(404)
+          .json({ message: "해당 날짜를 가진 레코드를 찾을 수 없습니다." });
+      } else {
+        res.status(200).json({ message: "데이터 성공적으로 삭제됨." });
+      }
+    });
+  } else {
+    res.status(400).json({ error: "Invalid data format" });
+  }
+});
+
 // 서버 시작
 app.listen(port, () => {
   console.log(`서버 여기서 돌아간다 -> http://localhost:${port}`);
