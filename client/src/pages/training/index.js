@@ -20,7 +20,7 @@ const Training = () => {
         </ElementContainer>
         <ElementContainer>
           <Bold>심리 검사로 본인의 감정을 인지해보세요.</Bold>
-          <Link to="selfcheck">
+          <Link to="selfcheck/start">
             <SelfCheck />
           </Link>
         </ElementContainer>

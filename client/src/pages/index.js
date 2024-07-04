@@ -10,3 +10,8 @@ export { default as Calendar } from "./record/calendar/index";
 export { default as Update } from "./record/calendar/update/index";
 export { default as Training } from "./training/index";
 export { default as ScenarioStart } from "./training/scenario/start/index";
+export { default as ScenarioProblem } from "./training/scenario/problem/index";
+export { default as ScenarioSolve } from "./training/scenario/solve/index";
+export { default as SelfCheckStart } from "./training/selfcheck/start";
+export { default as SelfCheckPage } from "./training/selfcheck/page1";
+export { default as About } from "./training/about";

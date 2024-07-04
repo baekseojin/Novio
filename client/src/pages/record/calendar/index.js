@@ -7,15 +7,19 @@ import Background from "../../../assets/images/Background.svg";
 
 const Calendar = () => {
   const [selectedDateData, setSelectedDateData] = useState(null);
+  const [fetchError, setFetchError] = useState(false); // 에러 발생 여부를 상태로 관리
 
   const fetchDateData = (date) => {
     axios
       .get(`http://localhost:5000/records`, { params: { date } })
       .then((response) => {
         setSelectedDateData(response.data);
+        setFetchError(false); // 데이터 가져오기 성공 시 에러 상태 초기화
       })
       .catch((error) => {
         console.log("There was an error fetching the data!", error);
+        setSelectedDateData(null); // 데이터 가져오기 실패 시 selectedDateData 초기화
+        setFetchError(false); // 에러 상태를 false로 설정하여 에러 화면이 나타나지 않도록 함
       });
   };
 
@@ -29,16 +33,27 @@ const Calendar = () => {
             <>
               <Box>
                 <h3>관찰</h3>
-                {selectedDateData[0].record_observation}
+                {selectedDateData.length > 0
+                  ? selectedDateData[0].record_observation
+                  : "작성한 일기가 없습니다!"}
               </Box>
               <Box>
-                <h3>느낌</h3> {selectedDateData[0].record_feeling}
+                <h3>느낌</h3>{" "}
+                {selectedDateData.length > 0
+                  ? selectedDateData[0].record_feeling
+                  : "작성한 일기가 없습니다!"}
               </Box>
               <Box>
-                <h3>욕구</h3> {selectedDateData[0].record_need}
+                <h3>욕구</h3>{" "}
+                {selectedDateData.length > 0
+                  ? selectedDateData[0].record_need
+                  : "작성한 일기가 없습니다!"}
               </Box>
               <Box>
-                <h3>부탁</h3> {selectedDateData[0].record_request}
+                <h3>부탁</h3>{" "}
+                {selectedDateData.length > 0
+                  ? selectedDateData[0].record_request
+                  : "작성한 일기가 없습니다!"}
               </Box>
             </>
           ) : (

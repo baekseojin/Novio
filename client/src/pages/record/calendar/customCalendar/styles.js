@@ -8,10 +8,12 @@ export const StyledCalendarWrapper = styled.div`
   justify-content: center;
   align-items: center;
   position: relative;
+  flex-direction: column;
+  gap: 50px;
 
   .react-calendar {
     width: 500px;
-    height: 600px;
+    height: 550px;
     border: none;
     border-radius: 0.5rem;
     box-shadow: 4px 2px 10px 0px rgba(0, 0, 0, 0.13);
@@ -161,4 +163,8 @@ export const StyledDot = styled.div`
   top: 60%;
   left: 50%;
   transform: translateX(-50%);
+`;
+
+export const Button = styled.div`
+  background-color: #482bd9;
 `;

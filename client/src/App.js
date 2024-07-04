@@ -27,6 +27,19 @@ function App() {
             path="/training/scenario/problem"
             element={<P.ScenarioProblem />}
           />
+          <Route
+            path="/training/scenario/solve"
+            element={<P.ScenarioSolve />}
+          />
+          <Route
+            path="/training/selfcheck/start"
+            element={<P.SelfCheckStart />}
+          />
+          <Route
+            path="/training/selfcheck/page"
+            element={<P.SelfCheckPage />}
+          />
+          <Route path="/training/about" element={<P.About />} />
         </Routes>
       </Router>
     </RecordProvider>

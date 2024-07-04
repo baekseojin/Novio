@@ -14,10 +14,10 @@ export default function Header() {
       <CenterElement>
         <StyledLink to="/record">기록 센터</StyledLink>
         <StyledLink to="/training">트레이닝 센터</StyledLink>
-        <StyledLink to="/community">커뮤니티 센터</StyledLink>
+        {/* <StyledLink to="/community">커뮤니티 센터</StyledLink> */}
       </CenterElement>
       <Mypage>
-        <StyledLink to="/mypage">마이페이지</StyledLink>
+        <StyledLink to="/mypage"></StyledLink>
       </Mypage>
     </Container>
   );

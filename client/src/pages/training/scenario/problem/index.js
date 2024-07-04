@@ -24,7 +24,7 @@ const ScenarioProblem = () => {
         <Textbox />
 
         <ButtonContainer>
-          <Link to="/record/confirm">
+          <Link to="/training/scenario/solve">
             <Button>다음</Button>
           </Link>
         </ButtonContainer>
